@@ -1,3 +1,90 @@
 "DOTAAbilities"
 {
+
+	"item_radiance_cheater"
+	{
+		"BaseClass" "item_radiance"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastRange" 				"700"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999" 
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_damage"			"60"
+				"aura_damage"			"6000"
+				"aura_damage_illusions"	"35"
+				"upgrade_day_vision"	"250"
+				"evasion"				"15"
+				"blind_pct"				"15"
+				"aura_radius"			"2000"
+		}
+	}
+	
+	"item_blood_grenade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1123"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.2"
+		"AbilityHealthCost"				"200"
+		"AbilityCooldown"				"2"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"50"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"grenade"
+		"ItemStackable"					"1"
+		"ItemStackableMax"				"50"
+		"ItemStockMax"					"100"
+		"ItemStockInitial"				"10"
+		"ItemStockTime"					"15"
+		"ItemInitialCharges"			"1"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+
+			"speed"					"1500"
+			"radius"				
+			{	
+				"value"		"450"
+				"affected_by_aoe_increase"	"1"
+			}
+			"movespeed_slow"		"-40"
+			"bonus_health"			"15"
+			"damage_over_time"		"4"
+			"impact_damage"			"100"
+			"tick_rate"				"0.3"
+			"debuff_duration"		"20"
+		}
+	}
 }

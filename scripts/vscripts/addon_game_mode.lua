@@ -31,7 +31,11 @@ function ini()
 	GameRules:SetTreeRegrowTime( TREE_REGROW_TIME )
 	GameRules:SetUseCustomHeroXPValues ( true )
 	GameRules:SetUseUniversalShopMode( UNIVERSAL_SHOP_MODE )
-
+	
+	GameRules:SetStrategyTime(15)
+	GameRules:SetShowcaseTime(1)
+	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
+	
 	XP_PER_LEVEL_TABLE = {}
 	XP_PER_LEVEL_TABLE[0] = 0
 	XP_PER_LEVEL_TABLE[1] = 250
@@ -39,26 +43,52 @@ function ini()
 		XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i-1]+ (i ^ 1.6)
 	end
 	mode = GameRules:GetGameModeEntity()
+	
+	mode:SetUseCustomHeroLevels ( true )
 	mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
 	mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 	
 	GameRules:LockCustomGameSetupTeamAssignment( true )
 	
 	GameRules:SetPreGameTime(15.0)
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 5 ) --5 это количество игроков для команд сил света
+	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 6 ) --5 это количество игроков для команд сил света
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 ) --0 это количество игроков для команд сил тьмы (0 - команда вообще не доступна)
 	
 	GameRules:LockCustomGameSetupTeamAssignment( true )
     GameRules:EnableCustomGameSetupAutoLaunch( true )
 	GameRules:SetCustomGameSetupAutoLaunchDelay( 0 )
+	
 	mode:SetFogOfWarDisabled(true)
 	mode:SetFreeCourierModeEnabled( true )
+	mode:SetFixedRespawnTime( 10 ) 
 	
+	mode:SetAllowNeutralItemDrops( true )
+	mode:SetNeutralStashEnabled ( true )
 	
 end
 
 if CAddonTemplateGameMode == nil then
 	CAddonTemplateGameMode = class({})
+end
+
+function CAddonTemplateGameMode:CaptureGameMode()
+	if mode == nil then
+		-- Set GameMode parameters
+		mode = GameRules:GetGameModeEntity()
+
+
+		mode:SetUseCustomHeroLevels ( true )
+		mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
+		mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
+		mode:SetFixedRespawnTime( 10 ) 
+		--mode:SetBotThinkingEnabled( USE_STANDARD_DOTA_BOT_THINKING )
+		mode:SetTowerBackdoorProtectionEnabled( false )
+		mode:SetAllowNeutralItemDrops( true )
+		mode:SetNeutralStashEnabled ( true )
+
+		self:OnFirstPlayerLoaded()
+		
+	end
 end
 
 
@@ -68,31 +98,45 @@ local power = 0
 
 creep_list = {"npc_dota_creature_gnoll_assassin", "rnd_lion"}
 
+creep_list = {
+	-- name                           cost chance
+	{"creep_ursa", 0, 1},
+	{"creep_sniper", 500, 0.05},
+	{"creep_lion", 1200, 0.4},
+	{"creep_chaos", 1400, 0.3},
+	{"creep_antimage", 1500, 0.1},
+	{"creep_bara", 2000, 0.05},
+	{"creep_zeus", 10000, 0.3},
+}
+
 function _G.Spawn_creep(rosh, creepwave)	
 	spawns = spawns + 1
 	
 	power = power + spawns
 	
-	print("here2")
 	spawnpoint1 = Entities:FindByName( nil, "creep_spawner" ):GetAbsOrigin()
-	--print("aaa" .. spawnpoint1)
+	
 	
 	local diff = 400
 	
-	maxlvl = 1
+	listing = {}
 	
-	if power >= 600 then
-		maxlvl = 2
+	for i = 1, #creep_list do
+		if math.random() <=  creep_list[i][3] and creep_list[i][2] <= power then
+			table.insert(listing, creep_list[i][1])
+		end
 	end
 	
-	selectedlvl = RandomInt(1,maxlvl)
+	selected_creep = listing[RandomInt(1,#listing)]
 	
-	if selectedlvl == 2 then
-		power = power - 600
+	for i = 1, #creep_list do
+		if selected_creep ==  creep_list[i][1] then
+			power = power - creep_list[i][2]
+		end
 	end
 	
-	
-	local creep = CreateUnitByName( creep_list[selectedlvl]	, spawnpoint1 + RandomVector( RandomFloat( diff, diff )), true, nil, nil, DOTA_TEAM_BADGUYS )
+	print("creep selected" .. selected_creep)
+	local creep = CreateUnitByName( selected_creep	, spawnpoint1 + RandomVector( RandomFloat( diff, diff )), true, nil, nil, DOTA_TEAM_BADGUYS )
 	
 	local mult_damage = 1 + spawns * 0.01
 	local mult_hp = 1 + spawns * 0.01
@@ -111,6 +155,10 @@ function _G.Spawn_creep(rosh, creepwave)
 	creep:SetHealth(creep:GetBaseMaxHealth())	
 	
 	creep:SetDeathXP(creep:GetDeathXP() * mult_xp)
+	
+
+	
+	
 	
 end
 
@@ -160,6 +208,10 @@ function CAddonTemplateGameMode:InitGameMode()
 	
 end
 
+function string.starts(String,Start)
+   return string.sub(String,1,string.len(Start))==Start
+end
+
 function CAddonTemplateGameMode:OnEntityKilled( keys )
 	
 	-- The Unit that was Killed
@@ -180,6 +232,45 @@ function CAddonTemplateGameMode:OnEntityKilled( keys )
 		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 		--request:savewave() 
 		return
+	end
+	
+	if killedUnit:GetUnitName() == "enemytower2" then
+		--SentStuffPostMatch("LOSE")
+		GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+		--request:savewave() 
+		return
+	end
+	
+	if string.starts(killedUnit:GetUnitName(), "creep") then
+		local players = 0
+		for index=0 ,10 do
+			if PlayerResource:HasSelectedHero(index) then
+				players = players + 1
+			end
+		end
+		
+		for index=0 ,10 do
+			if PlayerResource:HasSelectedHero(index) then
+				local player = PlayerResource:GetPlayer(index)
+				local hero = PlayerResource:GetSelectedHeroEntity(index)
+				
+				
+				---
+				
+				--hero:AddNewModifier (hero, nil, "modifier_wave_damage_bonus", {duration = -1})
+				--hero:AddNewModifier (hero, nil, "modifier_wave_speed_bonus", {duration = -1})
+				--hero:AddNewModifier (hero, nil, "modifier_gold_extra_storage", {duration = -1})
+				
+				local hero = PlayerResource:GetSelectedHeroEntity(index)
+				local currentGold = PlayerResource:GetGold(index)
+				hero:SpendGold( -1 * killedUnit:GetGoldBounty() / players / 3 , 0) -- 0 is an idk reason -_- (Dorty 10.04.2024)
+				
+				
+				
+				
+				--print("5 done ")
+			end
+		end
 	end
 end
 
