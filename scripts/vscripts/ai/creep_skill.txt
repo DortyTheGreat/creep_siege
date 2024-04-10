@@ -1,0 +1,74 @@
+"DOTAAbilities"
+{ 
+	"creep_damage_lua"					// Torn Flesh
+	{	
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ai/creep_damage.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"all/hell"
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"creep_damage"			"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4"
+			}
+		}
+	}
+	"creep_minus_armor_lua"    			// Destruction Of Armor
+	{	
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ai/creep_minus_armor.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"all/tank_crimson"
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stacks"			"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"percent"				"0.5"
+			}
+		}
+	}
+	"creep_damage_bonus_lua"    			// Destruction Of Armor
+	{	
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ai/creep_damage_bonus.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"all/creep_damage_bonus"
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_damage_bonus"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
+			}
+		}
+	}
+}
