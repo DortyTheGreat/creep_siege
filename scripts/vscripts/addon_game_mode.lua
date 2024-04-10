@@ -44,9 +44,9 @@ function ini()
 	end
 	mode = GameRules:GetGameModeEntity()
 	
-	mode:SetUseCustomHeroLevels ( true )
-	mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
-	mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
+	--mode:SetUseCustomHeroLevels ( true )
+	--mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
+	--mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 	
 	GameRules:LockCustomGameSetupTeamAssignment( true )
 	
@@ -77,9 +77,9 @@ function CAddonTemplateGameMode:CaptureGameMode()
 		mode = GameRules:GetGameModeEntity()
 
 
-		mode:SetUseCustomHeroLevels ( true )
-		mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
-		mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
+		--mode:SetUseCustomHeroLevels ( true )
+		--mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
+		--mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 		mode:SetFixedRespawnTime( 10 ) 
 		--mode:SetBotThinkingEnabled( USE_STANDARD_DOTA_BOT_THINKING )
 		mode:SetTowerBackdoorProtectionEnabled( false )
@@ -141,7 +141,7 @@ function _G.Spawn_creep(rosh, creepwave)
 	local mult_damage = 1 + spawns * 0.01
 	local mult_hp = 1 + spawns * 0.01
 	local mult_armor = 1 + spawns * 0.003
-	local mult_xp = 1 + spawns * 0.01
+	local mult_xp = 1 + spawns * 0.003
 	
 	
 	creep:SetBaseDamageMin(creep:GetBaseDamageMin() * mult_damage)
