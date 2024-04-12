@@ -106,7 +106,15 @@ creep_list = {
 	{"creep_chaos", 1400, 0.3},
 	{"creep_antimage", 1500, 0.1},
 	{"creep_bara", 2000, 0.05},
-	{"creep_zeus", 10000, 0.3},
+	{"creep_zeus", 2500, 0.1},
+	
+	{"creep_razor", 5000, 0.03},
+	{"creep_krot", 5000, 0.03},
+	{"creep_bristle", 5000, 0.03},
+	
+	{"creep_shaman", 10000, 0.01},
+	{"creep_legion", 13000, 0.01},
+	--{"creep_tide",   15000, 0.01},
 }
 
 function _G.Spawn_creep(rosh, creepwave)	
@@ -140,8 +148,8 @@ function _G.Spawn_creep(rosh, creepwave)
 	
 	local mult_damage = 1 + spawns * 0.01
 	local mult_hp = 1 + spawns * 0.01
-	local mult_armor = 1 + spawns * 0.003
-	local mult_xp = 1 + spawns * 0.003
+	local mult_armor = 1 + spawns * 0.001
+	local mult_xp = 1 + spawns * 0.004
 	
 	
 	creep:SetBaseDamageMin(creep:GetBaseDamageMin() * mult_damage)
@@ -263,7 +271,7 @@ function CAddonTemplateGameMode:OnEntityKilled( keys )
 				
 				local hero = PlayerResource:GetSelectedHeroEntity(index)
 				local currentGold = PlayerResource:GetGold(index)
-				hero:SpendGold( -1 * killedUnit:GetGoldBounty() / players / 3 , 0) -- 0 is an idk reason -_- (Dorty 10.04.2024)
+				hero:SpendGold( -1 * killedUnit:GetGoldBounty() / players / 2 , 0) -- 0 is an idk reason -_- (Dorty 10.04.2024)
 				
 				
 				
