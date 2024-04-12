@@ -1101,7 +1101,7 @@
 		"AttackRange"				"400"		
 		
 		"StatusHealth"				"900"		// Base health.
-		"StatusHealthRegen"			"100"		// Health regeneration rate.
+		"StatusHealthRegen"			"60"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"20"		// Mana regeneration rate.		
 
@@ -1243,7 +1243,7 @@
 		"AttackRange"				"400"		
 		
 		"StatusHealth"				"400"		// Base health.
-		"StatusHealthRegen"			"400"		// Health regeneration rate.
+		"StatusHealthRegen"			"50"		// Health regeneration rate.
 		"StatusMana"				"400"			// Base mana.
 		"StatusManaRegen"			"10"		// Mana regeneration rate.		
 
@@ -1328,7 +1328,7 @@
 		"AttackRange"				"300"		
 		
 		"StatusHealth"				"1000"		// Base health.
-		"StatusHealthRegen"			"400"		// Health regeneration rate.
+		"StatusHealthRegen"			"100"		// Health regeneration rate.
 		"StatusMana"				"400"			// Base mana.
 		"StatusManaRegen"			"10"		// Mana regeneration rate.		
 
