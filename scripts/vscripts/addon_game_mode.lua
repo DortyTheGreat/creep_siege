@@ -115,7 +115,7 @@ creep_list = {
 	{"creep_razor", 5000, 0.03},
 	{"creep_krot", 5000, 0.03},
 	{"creep_bristle", 5000, 0.03},
-	{"creep_wind", 0.7000, 10.01}, -- new
+	{"creep_wind", 7000, 0.01}, -- new
 	
 	{"creep_shaman", 10000, 0.01},
 	{"creep_legion", 13000, 0.01},

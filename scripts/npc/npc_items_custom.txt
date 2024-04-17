@@ -46,10 +46,10 @@
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.2"
-		"AbilityHealthCost"				"200"
-		"AbilityCooldown"				"2"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.3"
+		"AbilityHealthCost"				"125"
+		"AbilityCooldown"				"5"
 
 		
 		// Item Info
@@ -59,10 +59,10 @@
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"grenade"
 		"ItemStackable"					"1"
-		"ItemStackableMax"				"50"
+		"ItemStackableMax"				"100"
 		"ItemStockMax"					"100"
-		"ItemStockInitial"				"10"
-		"ItemStockTime"					"15"
+		"ItemStockInitial"				"5"
+		"ItemStockTime"					"25"
 		"ItemInitialCharges"			"1"
 		"ItemPermanent"					"0"
 		"IsTempestDoubleClonable"		"0"
@@ -73,17 +73,17 @@
 		"AbilityValues"
 		{
 
-			"speed"					"1500"
+			"speed"					"600"
 			"radius"				
 			{	
-				"value"		"450"
+				"value"		"400"
 				"affected_by_aoe_increase"	"1"
 			}
-			"movespeed_slow"		"-40"
-			"bonus_health"			"15"
-			"damage_over_time"		"4"
-			"impact_damage"			"100"
-			"tick_rate"				"0.3"
+			"movespeed_slow"		"-30"
+			"bonus_health"			"30"
+			"damage_over_time"		"10"
+			"impact_damage"			"70"
+			"tick_rate"				"0.5"
 			"debuff_duration"		"20"
 		}
 	}
