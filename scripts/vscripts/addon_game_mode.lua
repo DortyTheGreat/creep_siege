@@ -22,7 +22,7 @@ creep_spawn_interval = 5
 
 function ini()
 	GameRules:SetHeroRespawnEnabled( ENABLE_HERO_RESPAWN )
-	GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 600 ) 
+	GameRules:GetGameModeEntity():SetMaximumAttackSpeed( 800 ) 
 	GameRules:SetUseUniversalShopMode( UNIVERSAL_SHOP_MODE )
 	GameRules:SetSameHeroSelectionEnabled( ALLOW_SAME_HERO_SELECTION )
 	GameRules:SetHeroSelectionTime( HERO_SELECTION_TIME )
