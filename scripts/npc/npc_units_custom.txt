@@ -445,9 +445,211 @@
 	}
 	
 	
+	"creep_ursa_real"	
+	{
+		// General
+		//----------------------------------------------------------------
+		
+		"vscripts"					"ai/attack_move.lua"
+		
+		"Model"						"models/heroes/ursa/ursa.vmdl"		
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				".9"
 
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"ursa_fury_swipes"			// Ability 1
+		"Ability2"					"ursa_earthshock"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"3"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"3"		// Damage range min.
+		"AttackDamageMax"			"7"		// Damage range max.
+		"AttackRate"				"0.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"170"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/neutral_fx/gnoll_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1500"		// Speed of projectile.		     
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"170"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"30"		// Experience earn.
+		"BountyGoldMin"				"25"		// Gold earned min.
+		"BountyGoldMax"				"35"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"250"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"200"		// Base health.
+		"StatusHealthRegen"			"4"		// Health regeneration rate.
+		"StatusMana"				"200"			// Base mana.
+		"StatusManaRegen"			"5"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// Creature Data
+		//----------------------------------------------------------------
+		
+		"Creature"
+		{
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+					//"RoamDistance"		"150.0"
+				}
+			}
+ 
+			"DefaultState"				"Invade"
+ 
+			"OffensiveAbilities"
+			{
+				"Ability1"				
+				{
+					"Name"				"ursa_earthshock"
+				}
+			}
+
+		}
+		
+	}
 	
-	
+	"creep_ghoul"	
+	{
+		// General
+		//----------------------------------------------------------------
+		
+		"vscripts"					"ai/attack_move.lua"
+		
+		"Model"						"models/heroes/life_stealer/life_stealer.vmdl"	
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				".9"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"life_stealer_rage"			// Ability 1
+		"Ability2"					"life_stealer_feast"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"2"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"10"		// Damage range min.
+		"AttackDamageMax"			"50"		// Damage range max.
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"200"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/neutral_fx/gnoll_base_attack.vpcf" // Particle system model for projectile.
+		"ProjectileSpeed"			"1500"		// Speed of projectile.		     
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"170"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"30"		// Experience earn.
+		"BountyGoldMin"				"25"		// Gold earned min.
+		"BountyGoldMax"				"35"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"500"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"100"		// Base health.
+		"StatusHealthRegen"			"4"		// Health regeneration rate.
+		"StatusMana"				"300"			// Base mana.
+		"StatusManaRegen"			"5"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		// Creature Data
+		//----------------------------------------------------------------
+		
+		"Creature"
+		{
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+					//"RoamDistance"		"150.0"
+				}
+			}
+ 
+			"DefaultState"				"Invade"
+ 
+			"OffensiveAbilities"
+			{
+				"Ability1"				
+				{
+					"Name"				"life_stealer_rage"
+				}
+			}
+
+		}
+		
+	}
 	
 	"creep_lion"
 	{
@@ -889,7 +1091,7 @@
 	"creep_chaos"
 	{
 		"ConsideredHero"			"0"
-	
+		
 		"vscripts"					"ai/attack_move.lua"
 		"Model"						"models/heroes/chaos_knight/chaos_knight.vmdl"			
 		
@@ -979,8 +1181,9 @@
 	
 	"creep_razor"
 	{
-		"ConsideredHero"			"0"
-	
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		
 		"vscripts"					"ai/attack_move.lua"
 		"Model"						"models/heroes/razor/razor.vmdl"		
 		
@@ -1067,10 +1270,102 @@
 		}
 	}
 	
-	"creep_shaman"
+	"creep_wind"
 	{
 		"ConsideredHero"			"0"
+		"IsAncient"					"0"
+		
+		"vscripts"					"ai/attack_move.lua"
+		"Model"						"models/heroes/windrunner/windrunner.vmdl"	
+		
+		
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"30"
+		"ModelScale" 				"1.3"
+	 		
+		"Ability1"					"windrunner_shackleshot"			
+		"Ability2"					"windrunner_windrun"
+		"Ability3"					"windrunner_focusfire"
+
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"			"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+		
+		"ArmorPhysical"				"5"			
+		"MagicalResistance"			"30"			
+		
+		"AttackDamageMin"			"10"		
+		"AttackDamageMax"			"20"		
+		"AttackRate"				"1.5"		
+		"AttackAnimationPoint"		"0.1"		
+		"AttackAcquisitionRange"	"800"		
+		"AttackRange"				"400"		
+		
+		"StatusHealth"				"400"		// Base health.
+		"StatusHealthRegen"			"5"		// Health regeneration rate.
+		"StatusMana"				"500"			// Base mana.
+		"StatusManaRegen"			"5"		// Mana regeneration rate.		
+
+		"RingRadius"				"80"
+		"HealthBarOffset"			"300"
+
+		"BountyXP"					"60"		
+		"BountyGoldMin"				"80"		
+		"BountyGoldMax"				"100"		
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"350"		
+
+		"VisionDaytimeRange"		"800"		
+		"VisionNighttimeRange"		"800"		
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"						
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+					//"RoamDistance"		"150.0"
+				}
+			}
+ 
+			"DefaultState"				"Invade"
+ 
+			"OffensiveAbilities"
+			{
+				"Ability1"				
+				{
+					"Name"				"windrunner_shackleshot"
+				}
+				"Ability2"				
+				{
+					"Name"				"windrunner_windrun"
+				}
+				"Ability3"				
+				{
+					"Name"				"windrunner_focusfire"
+				}
+			}
+
+		}
+	}
 	
+	"creep_shaman"
+	{
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		
 		"vscripts"					"ai/attack_move.lua"
 		"Model"						"models/heroes/shadowshaman/shadowshaman.vmdl"			
 		
@@ -1163,9 +1458,97 @@
 		}
 	}
 	
+	"creep_tinker"
+	{
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		
+		"vscripts"					"ai/attack_move.lua"
+		"Model"						"models/heroes/tinker/tinker.vmdl"		
+		
+		
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"30"
+		"ModelScale" 				"3"
+	 		
+		"Ability1"					"tinker_heat_seeking_missile"			
+		"Ability2"					"tinker_rearm"
+
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf" // Particle system model for projectile.
+		
+		"ArmorPhysical"				"10"			
+		"MagicalResistance"			"50"			
+		
+		"AttackDamageMin"			"10"		
+		"AttackDamageMax"			"60"		
+		"AttackRate"				"1.0"		
+		"AttackAnimationPoint"		"0.1"		
+		"AttackAcquisitionRange"	"1200"		
+		"AttackRange"				"600"		
+		
+		"StatusHealth"				"900"		// Base health.
+		"StatusHealthRegen"			"60"		// Health regeneration rate.
+		"StatusMana"				"700"			// Base mana.
+		"StatusManaRegen"			"700"		// Mana regeneration rate.		
+
+		"RingRadius"				"100"
+		"HealthBarOffset"			"300"
+
+		"BountyXP"					"300"		
+		"BountyGoldMin"				"200"		
+		"BountyGoldMax"				"450"		
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"350"		
+
+		"VisionDaytimeRange"		"800"		
+		"VisionNighttimeRange"		"800"		
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"						
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+					//"RoamDistance"		"150.0"
+				}
+			}
+ 
+			"DefaultState"				"Invade"
+ 
+			"OffensiveAbilities"
+			{
+				"Ability1"				
+				{
+					"Name"				"tinker_heat_seeking_missile"
+				}
+				"Ability2"				
+				{
+					"Name"				"tinker_rearm"
+				}
+			}
+
+		}
+	}
+	
 	
 "creep_krot"
 	{
+		"IsAncient"					"1"
+	
 		"vscripts"					"ai/attack_move.lua"
 		"Model"						"models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole.vmdl"												// krot
 		"BaseClass"					"npc_dota_creature"
@@ -1213,8 +1596,9 @@
 	
 	"creep_bristle"
 	{
-		"ConsideredHero"			"0"
-	
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		
 		"vscripts"					"ai/attack_move.lua"
 		"Model"						"models/heroes/bristleback/bristleback.vmdl"			
 		
@@ -1297,11 +1681,98 @@
 		}
 	}
 	
+	"creep_kunnkkaa"
+	{
+		"ConsideredHero"			"0"
+		
+		"vscripts"					"ai/attack_move.lua"
+		"Model"						"models/heroes/kunkka/kunkka.vmdl"		
+		
+		
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"30"
+		"ModelScale" 				"1.2"
+	 		
+		
+		"Ability2"		"kunkka_tidebringer"
+		"Ability3"		"kunkka_x_marks_the_spot"
+
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf" // Particle system model for projectile.
+		
+		"ArmorPhysical"				"10"			
+		"MagicalResistance"			"20"			
+		
+		"AttackDamageMin"			"10"		
+		"AttackDamageMax"			"60"		
+		"AttackRate"				"1.0"		
+		"AttackAnimationPoint"		"0.1"		
+		"AttackAcquisitionRange"	"1000"		
+		"AttackRange"				"400"		
+		
+		"StatusHealth"				"300"		// Base health.
+		"StatusHealthRegen"			"20"		// Health regeneration rate.
+		"StatusMana"				"600"			// Base mana.
+		"StatusManaRegen"			"10"		// Mana regeneration rate.		
+
+		"RingRadius"				"100"
+		"HealthBarOffset"			"300"
+
+		"BountyXP"					"50"		
+		"BountyGoldMin"				"50"		
+		"BountyGoldMax"				"100"		
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"150"		
+
+		"VisionDaytimeRange"		"800"		
+		"VisionNighttimeRange"		"800"		
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"						
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+					//"RoamDistance"		"150.0"
+				}
+			}
+ 
+			"DefaultState"				"Invade"
+ 
+			"OffensiveAbilities"
+			{
+				"Ability1"				
+				{
+					"Name"				"kunkka_tidebringer"
+				}
+				"Ability2"				
+				{
+					"Name"				"kunkka_x_marks_the_spot"
+				}
+			}
+
+		}
+	}
+	
 	
 	"creep_legion"
 	{
-		"ConsideredHero"			"0"
-	
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		
 		"vscripts"					"ai/attack_move.lua"
 		"Model"						"models/heroes/legion_commander/legion_commander.vmdl"			
 		
@@ -1372,6 +1843,256 @@
 				"Ability1"				
 				{
 					"Name"				"legion_commander_duel"
+				}
+			}
+
+		}
+	}
+	
+	"creep_tide"
+	{
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		
+		"vscripts"					"ai/attack_move.lua"
+		"Model"						"models/heroes/tidehunter/tidehunter.vmdl"			
+		
+		
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"30"
+		"ModelScale" 				"2"
+	 		
+		"Ability1"		"tidehunter_ravage"
+
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf" // Particle system model for projectile.
+		
+		"ArmorPhysical"				"30"			
+		"MagicalResistance"			"40"			
+		
+		"AttackDamageMin"			"10"		
+		"AttackDamageMax"			"60"		
+		"AttackRate"				"1.0"		
+		"AttackAnimationPoint"		"0.1"		
+		"AttackAcquisitionRange"	"1000"		
+		"AttackRange"				"300"		
+		
+		"StatusHealth"				"1000"		// Base health.
+		"StatusHealthRegen"			"100"		// Health regeneration rate.
+		"StatusMana"				"400"			// Base mana.
+		"StatusManaRegen"			"10"		// Mana regeneration rate.		
+
+		"RingRadius"				"100"
+		"HealthBarOffset"			"300"
+
+		"BountyXP"					"400"		
+		"BountyGoldMin"				"400"		
+		"BountyGoldMax"				"600"		
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"100"		
+
+		"VisionDaytimeRange"		"800"		
+		"VisionNighttimeRange"		"800"		
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"						
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+					//"RoamDistance"		"150.0"
+				}
+			}
+ 
+			"DefaultState"				"Invade"
+ 
+			"OffensiveAbilities"
+			{
+				"Ability1"				
+				{
+					"Name"				"tidehunter_ravage"
+				}
+			}
+
+		}
+	}
+	
+	"creep_doom"
+	{
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		
+		"vscripts"					"ai/attack_move.lua"
+		"Model"						"models/heroes/doom/doom.vmdl"			
+		
+		
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"30"
+		"ModelScale" 				"2"
+	 		
+		"Ability1"		"doom_bringer_doom"
+
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf" // Particle system model for projectile.
+		
+		"ArmorPhysical"				"30"			
+		"MagicalResistance"			"40"			
+		
+		"AttackDamageMin"			"10"		
+		"AttackDamageMax"			"60"		
+		"AttackRate"				"1.0"		
+		"AttackAnimationPoint"		"0.1"		
+		"AttackAcquisitionRange"	"1000"		
+		"AttackRange"				"300"		
+		
+		"StatusHealth"				"1000"		// Base health.
+		"StatusHealthRegen"			"100"		// Health regeneration rate.
+		"StatusMana"				"400"			// Base mana.
+		"StatusManaRegen"			"10"		// Mana regeneration rate.		
+
+		"RingRadius"				"100"
+		"HealthBarOffset"			"300"
+
+		"BountyXP"					"400"		
+		"BountyGoldMin"				"400"		
+		"BountyGoldMax"				"600"		
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"100"		
+
+		"VisionDaytimeRange"		"800"		
+		"VisionNighttimeRange"		"800"		
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"						
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+					//"RoamDistance"		"150.0"
+				}
+			}
+ 
+			"DefaultState"				"Invade"
+ 
+			"OffensiveAbilities"
+			{
+				"Ability1"				
+				{
+					"Name"				"doom_bringer_doom"
+				}
+			}
+
+		}
+	}
+	
+	"creep_spectre"
+	{
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		
+		"vscripts"					"ai/attack_move.lua"
+		"Model"						"models/heroes/spectre/spectre.vmdl"	
+		
+		
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"30"
+		"ModelScale" 				"2"
+	 		
+		"Ability1"		"spectre_spectral_dagger"
+		"Ability2"		"spectre_desolate"
+		"Ability3"		"spectre_dispersion"
+		"Ability5"		"spectre_haunt_single"
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		//"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf" // Particle system model for projectile.
+		
+		"ArmorPhysical"				"15"			
+		"MagicalResistance"			"40"			
+		
+		"AttackDamageMin"			"10"		
+		"AttackDamageMax"			"60"		
+		"AttackRate"				"1.0"		
+		"AttackAnimationPoint"		"0.1"		
+		"AttackAcquisitionRange"	"1000"		
+		"AttackRange"				"300"		
+		
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"100"		// Health regeneration rate.
+		"StatusMana"				"400"			// Base mana.
+		"StatusManaRegen"			"10"		// Mana regeneration rate.		
+
+		"RingRadius"				"100"
+		"HealthBarOffset"			"300"
+
+		"BountyXP"					"400"		
+		"BountyGoldMin"				"400"		
+		"BountyGoldMax"				"600"		
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"100"		
+
+		"VisionDaytimeRange"		"800"		
+		"VisionNighttimeRange"		"800"		
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"						
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+					//"RoamDistance"		"150.0"
+				}
+			}
+ 
+			"DefaultState"				"Invade"
+ 
+			"OffensiveAbilities"
+			{
+				"Ability1"				
+				{
+					"Name"				"spectre_haunt_single"
+				}
+				
+				"Ability2"				
+				{
+					"Name"				"spectre_spectral_dagger"
 				}
 			}
 

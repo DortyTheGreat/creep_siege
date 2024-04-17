@@ -101,6 +101,9 @@ creep_list = {"npc_dota_creature_gnoll_assassin", "rnd_lion"}
 creep_list = {
 	-- name                           cost chance
 	{"creep_ursa", 0, 1},
+	{"creep_ursa_real", 50, 0.4}, -- new
+	{"creep_ghoul", 300, 0.05}, -- new
+	
 	{"creep_sniper", 500, 0.05},
 	{"creep_lion", 1200, 0.4},
 	{"creep_chaos", 1400, 0.3},
@@ -108,19 +111,24 @@ creep_list = {
 	{"creep_bara", 2000, 0.05},
 	{"creep_zeus", 2500, 0.1},
 	
+	{"creep_kunnkkaa", 3000, 0.05}, -- new
 	{"creep_razor", 5000, 0.03},
 	{"creep_krot", 5000, 0.03},
 	{"creep_bristle", 5000, 0.03},
+	{"creep_wind", 0.7000, 10.01}, -- new
 	
 	{"creep_shaman", 10000, 0.01},
 	{"creep_legion", 13000, 0.01},
-	--{"creep_tide",   15000, 0.01},
+	{"creep_tide",   13000, 0.01}, -- new
+	{"creep_doom",   13000, 0.01}, -- new
+	{"creep_spectre",   13000, 0.01}, -- news
+	{"creep_tinker",   15000, 0.007}, -- news
 }
 
 function _G.Spawn_creep(rosh, creepwave)	
 	spawns = spawns + 1
 	
-	power = power + spawns
+	power = power + spawns * 0.85
 	
 	spawnpoint1 = Entities:FindByName( nil, "creep_spawner" ):GetAbsOrigin()
 	
